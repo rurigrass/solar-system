@@ -1,6 +1,7 @@
 import { useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
+import Clouds from "./clouds";
 
 type EarthProps = {
   scale: number;
@@ -9,7 +10,13 @@ type EarthProps = {
 };
 
 export default function Earth({ scale, radius, orbit }: EarthProps) {
-  const [earthTexture] = useTexture(["/planets/earth.jpeg"]);
+  const [earthTexture, earthNormalMap, earthSpecularMap, earthDisplacementMap] =
+    useTexture([
+      "/planets/earth.jpeg",
+      "/planets/earth_normal.jpeg",
+      "/planets/earth_specular.jpeg",
+      "/planets/earth_displacement.jpeg",
+    ]);
   const earthRef = useRef<any>();
 
   if (orbit) {
@@ -37,7 +44,14 @@ export default function Earth({ scale, radius, orbit }: EarthProps) {
       position={[radius, 0, 0]}
     >
       <sphereGeometry args={[1, 64, 64]} />
-      <meshStandardMaterial map={earthTexture} />
+      <meshPhongMaterial
+        map={earthTexture}
+        normalMap={earthNormalMap}
+        specularMap={earthSpecularMap}
+        displacementMap={earthDisplacementMap}
+        displacementScale={0.05}
+      />
+      <Clouds orbit={orbit} />
     </mesh>
   );
 }
