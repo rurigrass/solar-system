@@ -1,11 +1,15 @@
 import { useTexture } from "@react-three/drei";
 
-export default function Sun() {
+type SunProps = {
+  scale: number;
+};
+
+export default function Sun({ scale }: SunProps) {
   const [sunTexture] = useTexture(["/planets/sun.jpeg"]);
 
   return (
     <mesh
-      scale={1.5}
+      scale={scale}
       // position={position}
       position={[0, 0, 0]}
     >

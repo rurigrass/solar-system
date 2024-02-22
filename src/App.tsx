@@ -17,11 +17,10 @@ function App() {
       camera={{
         fov: 45,
         near: 0.1,
-        far: 200,
-        position: [0, 0, -20],
+        far: 1000,
+        position: [0, 0, -1000],
       }}
     >
-      <color args={["#030202"]} attach="background" />
       <OrbitControls />
       <Space />
       <SolarSystem />
