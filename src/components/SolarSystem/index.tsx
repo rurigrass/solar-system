@@ -7,7 +7,6 @@ import Jupiter from "./Jupiter";
 import Saturn from "./Saturn";
 import Uranus from "./Uranus";
 import Neptune from "./Neptune";
-import Clouds from "./Earth/clouds";
 
 export default function SolarSystem() {
   const measurements = {
@@ -39,9 +38,7 @@ export default function SolarSystem() {
 
   return (
     <>
-      {/* <Sun scale={measurements.sun.scale.fun / divide} /> */}
-      <Earth scale={measurements.earth.scale.fun} radius={0} orbit={orbit} />
-      {/* <Clouds /> */}
+      <Sun scale={measurements.sun.scale.fun / divide} />
       <Mercury
         scale={measurements.mercury.scale.fun / divide}
         radius={measurements.mercury.radius.fun}

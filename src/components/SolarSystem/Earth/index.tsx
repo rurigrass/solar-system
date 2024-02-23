@@ -13,9 +13,9 @@ export default function Earth({ scale, radius, orbit }: EarthProps) {
   const [earthTexture, earthNormalMap, earthSpecularMap, earthDisplacementMap] =
     useTexture([
       "/planets/earth.jpeg",
-      "/planets/earth_normal.jpeg",
-      "/planets/earth_specular.jpeg",
-      "/planets/earth_displacement.jpeg",
+      // "/planets/earth_normal.jpeg",
+      // "/planets/earth_specular.jpeg",
+      // "/planets/earth_displacement.jpeg",
     ]);
   const earthRef = useRef<any>();
 
@@ -46,10 +46,10 @@ export default function Earth({ scale, radius, orbit }: EarthProps) {
       <sphereGeometry args={[1, 64, 64]} />
       <meshPhongMaterial
         map={earthTexture}
-        normalMap={earthNormalMap}
-        specularMap={earthSpecularMap}
-        displacementMap={earthDisplacementMap}
-        displacementScale={0.05}
+        // normalMap={earthNormalMap}
+        // specularMap={earthSpecularMap}
+        // displacementMap={earthDisplacementMap}
+        // displacementScale={0.05}
       />
       <Clouds orbit={orbit} />
     </mesh>
