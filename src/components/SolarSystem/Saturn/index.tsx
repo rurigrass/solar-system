@@ -6,9 +6,10 @@ type SaturnProps = {
   scale: number;
   radius: number;
   orbit: boolean;
+  speed: number;
 };
 
-export default function Saturn({ scale, radius, orbit }: SaturnProps) {
+export default function Saturn({ scale, radius, orbit, speed }: SaturnProps) {
   const [saturnTexture] = useTexture(["/planets/saturn.jpeg"]);
   const saturnRef = useRef<any>();
 
@@ -16,7 +17,7 @@ export default function Saturn({ scale, radius, orbit }: SaturnProps) {
     useFrame(({ clock }) => {
       const elapsedTime = clock.elapsedTime - 6;
       // const radius = 55; // Adjust this value as needed
-      const orbitSpeed = 0.5; // Adjust this value as needed
+      const orbitSpeed = speed; // Adjust this value as needed
       const position = { x: 0, y: 0, z: 0 };
 
       // Set positions with the calculated values

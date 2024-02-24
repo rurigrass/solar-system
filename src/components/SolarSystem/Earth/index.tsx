@@ -7,9 +7,10 @@ type EarthProps = {
   scale: number;
   radius: number;
   orbit: boolean;
+  speed: number;
 };
 
-export default function Earth({ scale, radius, orbit }: EarthProps) {
+export default function Earth({ scale, radius, orbit, speed }: EarthProps) {
   const [earthTexture, earthNormalMap, earthSpecularMap, earthDisplacementMap] =
     useTexture([
       "/planets/earth.jpeg",
@@ -23,7 +24,7 @@ export default function Earth({ scale, radius, orbit }: EarthProps) {
     useFrame(({ clock }) => {
       const elapsedTime = clock.elapsedTime - 6;
       // const radius = radius; // Adjust this value as needed
-      const orbitSpeed = 0.5; // Adjust this value as needed
+      const orbitSpeed = speed; // Adjust this value as needed
       const position = { x: 0, y: 0, z: 0 };
 
       // Set positions with the calculated values

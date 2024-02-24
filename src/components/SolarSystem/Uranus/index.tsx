@@ -6,9 +6,10 @@ type UranusProps = {
   scale: number;
   radius: number;
   orbit: boolean;
+  speed: number;
 };
 
-export default function Uranus({ scale, radius, orbit }: UranusProps) {
+export default function Uranus({ scale, radius, orbit, speed }: UranusProps) {
   const [uranusTexture] = useTexture(["/planets/uranus.jpeg"]);
   const uranusRef = useRef<any>();
 
@@ -16,7 +17,7 @@ export default function Uranus({ scale, radius, orbit }: UranusProps) {
     useFrame(({ clock }) => {
       const elapsedTime = clock.elapsedTime - 6;
       // const radius = 55; // Adjust this value as needed
-      const orbitSpeed = 0.5; // Adjust this value as needed
+      const orbitSpeed = speed; // Adjust this value as needed
       const position = { x: 0, y: 0, z: 0 };
 
       // Set positions with the calculated values

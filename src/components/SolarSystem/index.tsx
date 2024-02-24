@@ -14,27 +14,47 @@ export default function SolarSystem() {
     mercury: {
       scale: { actual: 0.2, fun: 1 },
       radius: { actual: 10, fun: 15 },
+      speed: { actual: 1.607 },
     },
     venus: {
       scale: { actual: 0.949, fun: 4.9 },
       radius: { actual: 10, fun: 25 },
+      speed: { actual: 1.176 },
     },
-    earth: { scale: { actual: 1, fun: 5 }, radius: { actual: 10, fun: 35 } },
-    mars: { scale: { actual: 0.5, fun: 2.5 }, radius: { actual: 10, fun: 45 } },
+    earth: {
+      scale: { actual: 1, fun: 5 },
+      radius: { actual: 10, fun: 35 },
+      speed: { actual: 1 },
+    },
+    mars: {
+      scale: { actual: 0.5, fun: 2.5 },
+      radius: { actual: 10, fun: 45 },
+      speed: { actual: 0.808 },
+    },
     jupiter: {
       scale: { actual: 11, fun: 15 },
       radius: { actual: 10, fun: 60 },
+      speed: { actual: 0.439 },
     },
-    saturn: { scale: { actual: 10, fun: 13 }, radius: { actual: 10, fun: 75 } },
+    saturn: {
+      scale: { actual: 10, fun: 13 },
+      radius: { actual: 10, fun: 75 },
+      speed: { actual: 0.325 },
+    },
     uranus: {
       scale: { actual: 4.1, fun: 9.5 },
       radius: { actual: 10, fun: 90 },
+      speed: { actual: 0.228 },
     },
-    neptune: { scale: { actual: 4, fun: 9 }, radius: { actual: 10, fun: 100 } },
+    neptune: {
+      scale: { actual: 4, fun: 9 },
+      radius: { actual: 10, fun: 100 },
+      speed: { actual: 0.181 },
+    },
   };
 
   const divide = 4;
-  const orbit = false;
+  const orbit = true;
 
   return (
     <>
@@ -43,41 +63,49 @@ export default function SolarSystem() {
         scale={measurements.mercury.scale.fun / divide}
         radius={measurements.mercury.radius.fun}
         orbit={orbit}
+        speed={measurements.mercury.speed.actual}
       />
       <Venus
         scale={measurements.venus.scale.fun / divide}
         radius={measurements.venus.radius.fun}
         orbit={orbit}
+        speed={measurements.venus.speed.actual}
       />
       <Earth
         scale={measurements.earth.scale.fun / divide}
         radius={measurements.earth.radius.fun}
         orbit={orbit}
+        speed={measurements.earth.speed.actual}
       />
       <Mars
         scale={measurements.mars.scale.fun / divide}
         radius={measurements.mars.radius.fun}
         orbit={orbit}
+        speed={measurements.mars.speed.actual}
       />
       <Jupiter
         scale={measurements.jupiter.scale.fun / divide}
         radius={measurements.jupiter.radius.fun}
         orbit={orbit}
+        speed={measurements.jupiter.speed.actual}
       />
       <Saturn
         scale={measurements.jupiter.scale.fun / divide}
         radius={measurements.saturn.radius.fun}
         orbit={orbit}
+        speed={measurements.saturn.speed.actual}
       />
       <Uranus
         scale={measurements.uranus.scale.fun / divide}
         radius={measurements.uranus.radius.fun}
         orbit={orbit}
+        speed={measurements.uranus.speed.actual}
       />
       <Neptune
         scale={measurements.neptune.scale.fun / divide}
         radius={measurements.neptune.radius.fun}
         orbit={orbit}
+        speed={measurements.neptune.speed.actual}
       />
 
       {/* <Sun scale={measurements.sun.scale.actual / divide} />

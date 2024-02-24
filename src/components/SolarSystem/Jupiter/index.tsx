@@ -6,9 +6,10 @@ type JupiterProps = {
   scale: number;
   radius: number;
   orbit: boolean;
+  speed: number;
 };
 
-export default function Jupiter({ scale, radius, orbit }: JupiterProps) {
+export default function Jupiter({ scale, radius, orbit, speed }: JupiterProps) {
   const [jupiterTexture] = useTexture(["/planets/jupiter.jpeg"]);
   const jupiterRef = useRef<any>();
 
@@ -16,7 +17,7 @@ export default function Jupiter({ scale, radius, orbit }: JupiterProps) {
     useFrame(({ clock }) => {
       const elapsedTime = clock.elapsedTime - 6;
       // const radius = 55; // Adjust this value as needed
-      const orbitSpeed = 0.5; // Adjust this value as needed
+      const orbitSpeed = speed; // Adjust this value as needed
       const position = { x: 0, y: 0, z: 0 };
 
       // Set positions with the calculated values
