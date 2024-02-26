@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function Controls({ onScaleChange, onRadiusChange }: any) {
   const [isScaleChecked, setIsScaleChecked] = useState(false);
@@ -15,7 +15,7 @@ export default function Controls({ onScaleChange, onRadiusChange }: any) {
   };
 
   return (
-    <div className="z-50 absolute top-0 right-0 bg-orange-600 p-4">
+    <div className="z-50 absolute top-0 right-0 bg-orange-600 p-4  rounded-bl-md ">
       <div className="flex items-center mb-4">
         <input
           type="checkbox"
