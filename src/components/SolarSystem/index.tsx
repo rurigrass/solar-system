@@ -8,8 +8,17 @@ import Saturn from "./Saturn";
 import Uranus from "./Uranus";
 import Neptune from "./Neptune";
 
-export default function SolarSystem() {
-  const measurements = {
+export default function SolarSystem({
+  scaleType,
+  radiusType,
+}: {
+  scaleType: string;
+  radiusType: string;
+}) {
+  const divide = 4;
+  const orbit = true;
+
+  const measurements: any = {
     sun: { scale: { actual: 109, fun: 25 } },
     mercury: {
       scale: { actual: 0.2, fun: 1 },
@@ -53,98 +62,57 @@ export default function SolarSystem() {
     },
   };
 
-  const divide = 4;
-  const orbit = true;
-
   return (
     <>
-      <Sun scale={measurements.sun.scale.fun / divide} />
+      <Sun scale={measurements.sun.scale[scaleType] / divide} />
       <Mercury
-        scale={measurements.mercury.scale.fun / divide}
-        radius={measurements.mercury.radius.fun}
+        scale={measurements.mercury.scale[scaleType] / divide}
+        radius={measurements.mercury.radius[radiusType]}
         orbit={orbit}
         speed={measurements.mercury.speed.actual}
       />
       <Venus
-        scale={measurements.venus.scale.fun / divide}
-        radius={measurements.venus.radius.fun}
+        scale={measurements.venus.scale[scaleType] / divide}
+        radius={measurements.venus.radius[radiusType]}
         orbit={orbit}
         speed={measurements.venus.speed.actual}
       />
       <Earth
-        scale={measurements.earth.scale.fun / divide}
-        radius={measurements.earth.radius.fun}
+        scale={measurements.earth.scale[scaleType] / divide}
+        radius={measurements.earth.radius[radiusType]}
         orbit={orbit}
         speed={measurements.earth.speed.actual}
       />
       <Mars
-        scale={measurements.mars.scale.fun / divide}
-        radius={measurements.mars.radius.fun}
+        scale={measurements.mars.scale[scaleType] / divide}
+        radius={measurements.mars.radius[radiusType]}
         orbit={orbit}
         speed={measurements.mars.speed.actual}
       />
       <Jupiter
-        scale={measurements.jupiter.scale.fun / divide}
-        radius={measurements.jupiter.radius.fun}
+        scale={measurements.jupiter.scale[scaleType] / divide}
+        radius={measurements.jupiter.radius[radiusType]}
         orbit={orbit}
         speed={measurements.jupiter.speed.actual}
       />
       <Saturn
-        scale={measurements.jupiter.scale.fun / divide}
-        radius={measurements.saturn.radius.fun}
+        scale={measurements.jupiter.scale[scaleType] / divide}
+        radius={measurements.saturn.radius[radiusType]}
         orbit={orbit}
         speed={measurements.saturn.speed.actual}
       />
       <Uranus
-        scale={measurements.uranus.scale.fun / divide}
-        radius={measurements.uranus.radius.fun}
+        scale={measurements.uranus.scale[scaleType] / divide}
+        radius={measurements.uranus.radius[radiusType]}
         orbit={orbit}
         speed={measurements.uranus.speed.actual}
       />
       <Neptune
-        scale={measurements.neptune.scale.fun / divide}
-        radius={measurements.neptune.radius.fun}
+        scale={measurements.neptune.scale[scaleType] / divide}
+        radius={measurements.neptune.radius[radiusType]}
         orbit={orbit}
         speed={measurements.neptune.speed.actual}
       />
-
-      {/* <Sun scale={measurements.sun.scale.actual / divide} />
-      <Mercury
-        scale={measurements.mercury.scale.actual / divide}
-        radius={40}
-        orbit={orbit}
-      />
-      <Venus
-        scale={measurements.venus.scale.actual / divide}
-        radius={40}
-        orbit={orbit}
-      />
-      <Earth
-        scale={measurements.earth.scale.actual / divide}
-        radius={50}
-        orbit={orbit}
-      />
-      <Mars scale={measurements.mars.scale.actual / divide} radius={60} orbit />
-      <Jupiter
-        scale={measurements.jupiter.scale.actual / divide}
-        radius={70}
-        orbit={orbit}
-      />
-      <Saturn
-        scale={measurements.jupiter.scale.actual / divide}
-        radius={80}
-        orbit={orbit}
-      />
-      <Uranus
-        scale={measurements.uranus.scale.actual / divide}
-        radius={75}
-        orbit={orbit}
-      />
-      <Neptune
-        scale={measurements.neptune.scale.actual / divide}
-        radius={90}
-        orbit={orbit}
-      /> */}
     </>
   );
 }
