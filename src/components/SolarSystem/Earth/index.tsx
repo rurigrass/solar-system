@@ -23,7 +23,6 @@ export default function Earth({ scale, radius, orbit, speed }: EarthProps) {
   if (orbit) {
     useFrame(({ clock }) => {
       const elapsedTime = clock.elapsedTime - 6;
-      // const radius = radius; // Adjust this value as needed
       const orbitSpeed = speed; // Adjust this value as needed
       const position = { x: 0, y: 0, z: 0 };
 
